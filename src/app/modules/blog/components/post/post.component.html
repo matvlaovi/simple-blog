@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="header truncate body-text-l" [class.truncate]="!showExpanded">{{ post.title }}</div>
+    <div class="body-text-m" [class.truncate-body]="!showExpanded">{{ post.body }}</div>
+    <div class="tags">
+        @for (tag of post.tags; track tag) {
+        <div class="label">{{ tag }}</div>
+        }
+    </div>
+    <div class="footer">
+        <div class="reactions">
+            <div class="reaction">
+                <div>Likes:</div>
+                <div>{{ post.reactions.likes }}</div>
+            </div>
+            <div class="reaction">
+                <div>Dislikes:</div>
+                <div>{{ post.reactions.dislikes }}</div>
+            </div>
+        </div>
+        <div>{{ post.views }} views</div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="header heading-l">Latest posts</div>
+
+<div class="container">
+    @for (post of posts; track $index) {
+    <blog-post [post]="post" [routerLink]="['details', post.id]" />
+    }
+</div>
+
+@if(isLoadMoreButtonEnabled){
+<button class="button load-more-button" (click)="onLoadMoreClick()">Load more</button>
+}
